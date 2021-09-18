@@ -5,7 +5,7 @@ const MenuCard = ({imageSrc, title, hrefLink, link}) => {
     return ( 
         <div className="col-lg-3 col-sm-6 col-xs-12">
             <div className="card">
-                <div style={{position: 'relative', height: '180px', width: '100%'}}>
+                <div className="image-wrapper">
                     <Image src={imageSrc} alt={title} layout="fill" objectFit="cover" />
                 </div>
                 <div className="card-body text-center">

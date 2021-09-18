@@ -1,13 +1,22 @@
 import MenuCard from '../components/MenuCard';
 import Head from 'next/head';
 
-export const getStaticProps = async () => {
+/* export const getStaticProps = async () => {
     const res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
     const { categories } = await res.json();
   
     return {
       props: { categories: categories }
     }
+} */
+
+export async function getServerSideProps() {
+    const res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php');
+    const { categories } = await res.json();
+  
+    return {
+      props: { categories: categories }
+    };
 }
 
 export default function Home({categories}) {
